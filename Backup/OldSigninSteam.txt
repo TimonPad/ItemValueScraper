@@ -1,0 +1,75 @@
+    def notLogged_in_Buff(driver):
+        # Locate the account input field and enter credentials
+        Steam_accountLogin = wait_for_element_clickable(
+            "//*[@id='responsive_page_template_content']/div[1]/div[1]/div/div/div/div[2]/div/form/div[1]/input")
+        Steam_accountLogin.send_keys("z00bie")
+        # Locate the password input field and enter credentials
+        Steam_passLogin = wait_for_element_clickable(
+            "//*[@id='responsive_page_template_content']/div[1]/div[1]/div/div/div/div[2]/div/form/div[2]/input")
+        Steam_passLogin.send_keys("ClickClack8&")
+        # Click the "Sign in" button
+        Steam_LoginButton = wait_for_element_clickable(
+            "//*[@id='responsive_page_template_content']/div[1]/div[1]/div/div/div/div[2]/div/form/div[4]/button")
+        Steam_LoginButton.click()
+
+    def Logged_in_Buff(driver):
+        # Make the second sign-in button click
+        driver.implicitly_wait(10)
+        Steam_LoginButton2 = wait_for_element_clickable("//*[@id='imageLogin']")
+        Steam_LoginButton2.click()
+        print("Part 2")
+    try:
+        part2_visible = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, "//*[@id='imageLogin']"))
+        )
+        driver.implicitly_wait(10)
+        print("Part 3")
+        # If Part 2 elements are visible, skip Part 1 and go to Part 2
+        Logged_in_Buff(driver)
+    except TimeoutException:
+        # If Part 2 elements are not visible, proceed with Part 1
+        notLogged_in_Buff(driver)
+        driver.implicitly_wait(10)
+        print("Part 4")
+    driver.switch_to.window(windows[0])
+    print("Part 5")
+
+#driver.get("https://buff.163.com/goods/779196?from=market#tab=selling&sort_by=default&min_paintwear=0.01&max_paintwear=0.02&page_num=1")
+    market_button = wait_for_element_clickable((By.XPATH, "//ul[@class='menu-items']/li[2]/a/strong"))
+    print("crashes after")
+    market_button.click()
+    print("Part 6")
+    search_skin_field = wait_for_element_clickable("//*[@id='j_search']/span/input")
+    search_skin_field.click()
+    search_skin_field.send_keys("USP-S | Orion (Factory New)")
+    search_skin_field.send_keys(Keys.RETURN)
+
+    float_range_button = wait_for_element_clickable("//*[@id='custom_paintwear_show']")
+    float_range_button.click()
+    click_float = wait_for_element_clickable("//*[@id='paintwear_list]/li[2]/h6")
+    click_float.click()
+    # //*[@id="paintwear_list"]/li[2]/h6 Is first of dropdown menu
+    #//*["id="paintwear_list"]/li[3]/h6 second in dropdown menu
+    #// *[ @ id = "sell_order_0783896841-6E0F-148560405"] / td[5] / div[1] / strong
+
+    element = driver.find_element(By.XPATH, '//*[@id="sell_order_0783896841-6E0F-148560405"]/td[5]/div[1]/strong')
+    value = element.text
+    print("Extracted value:", value)
+    driver.quit()
+
+
+
+https://buff.163.com/goods/42201?from=market#tab=selling&min_paintwear=0.01&max_paintwear=0.02&page_num=1
+
+Make loop:
+    #Create a loop function for this that can be called for row.csv use parameters goods id, min_float, max_float
+    driver.get("https://buff.163.com/goods/42201?from=market#tab=selling&min_paintwear=0.01&max_paintwear=0.02&page_num=1")
+    wait.until(EC.visibility_of_element_located((By.XPATH, "/html/body/div[6]/div/div[1]/div[2]/div[1]/h1")))
+    print("Goods name visible")
+    wait.until(EC.visibility_of_element_located((By.XPATH, "//*[@id='market-selling-list']/tbody")))
+    parent_element = driver.find_element(By.XPATH, "//*[@id='market-selling-list']/tbody")
+    tr_elements = parent_element.find_elements(By.TAG_NAME, "tr")
+    second_tr_id = tr_elements[1].get_attribute("id")
+    element1 = driver.find_element(By.XPATH, f"//*[@id='{second_tr_id}']/td[5]/div[1]/strong")
+    extracted_value = re.search(r'¥ (\d+)', element1.text).group(1)
+    print("Extracted numbers:", extracted_value)

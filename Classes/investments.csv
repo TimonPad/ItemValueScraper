@@ -1,0 +1,11 @@
+goods_name,goods_id,float_range,buy_price_original,quantity,buy_price_cny,current_lowest_steam,current_lowest_buff,current_highest_buyorder,percentage_profit,inventory
+NaN,42201,0.0156,10.56,2,81.20,NaN,NaN,NaN,NaN,True
+USP-S | Orion (Minimal Wear),42203,0.09,50.69,2,386.1,429.72,330,262.00,-14.5,True
+USP-S | Orion (Factory New),42201,0.015,50.82,1,387.09,522.47,580,351.00,49.8,True
+USP-S | Orion (Field-Tested),42202,0.185,20.22,1,154.01,382.81,295,280.00,91.5,True
+USP-S | Orion (Minimal Wear),42203,0.073,79.92,1,608.75,429.72,357,262.00,-41.4,True
+Sawed-Off | First Class (Factory New),36604,0.05,20.26,3,154.32,287.75,299,178.00,93.8,True
+Sawed-Off | First Class (Minimal Wear),36606,0.09,50.68,6,386.03,250.48,,150.00,,True
+Sawed-Off | First Class (Field-Tested),36605,0.19,150.0,5,1142.54,235.87,,150.00,,True
+Sawed-Off | First Class (Well-Worn),36607,0.42,15.99,2,121.79,1021.42,,None,,True
+Sawed-Off | First Class (Battle-Scarred),36603,0.698,50.88,1,387.55,172.41,,124.00,,True

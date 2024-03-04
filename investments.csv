@@ -1,0 +1,6 @@
+goods_name,goods_id,float_range,quantity,buy_price,current_lowest_steam,current_lowest_buff,current_highest_buyorder,percentage_profit,inventory
+Sawed-Off | First Class,36604,15,98,1560,334.18,299.99,173,520.0,True
+Sawed-Off | First Class,36606,1,98,1560,251.19,200.26,102,779.0,True
+Sawed-Off | First Class,36605,2,98,1560,234.06,309.5,150,504.0,True
+Sawed-Off | First Class,36607,3,98,1560,1042.27,2700,None,57.8,True
+Sawed-Off | First Class,36603,15,98,1560,172.38,6000,124,26.0,True
