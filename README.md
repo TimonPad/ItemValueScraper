@@ -10,4 +10,5 @@ In every option in the menu has its own functionalities.
 
 It is not a finished product but work in progress.
 
+Example of an earlier version (outdated):
 ![Alt text](ExamplePicture.png)
