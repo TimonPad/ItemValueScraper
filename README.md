@@ -1,6 +1,7 @@
 # ItemValueScraper
 
 Item value scraper that signs in automatically if not signed in yet. Whenever the account is signed in the menu starts and the user can select the option he wants.
+Script uses selenium, pandas.
 
 Working:
 On initiation the items are updated with the current data. 
