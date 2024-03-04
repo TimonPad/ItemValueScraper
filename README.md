@@ -9,3 +9,5 @@ Item line can be added, show table, edit line, update line/all, save to backup, 
 In every option in the menu has its own functionalities.
 
 It is not a finished product but work in progress.
+
+![Alt text](ExamplePicture.png)
